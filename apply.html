@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Certificates</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+.progress-bar {
+      background-color: #007bff; /* Blue color */
+      color: green; /* White text */
+      height: 20px; /* Adjust height as needed */
+      line-height: 20px; /* Match height to center the text vertically */
+      font-size: 12px; /* Adjust font size as needed */
+      width: 100%;
+}
+
+.progress {
+  width: 100%;
+}
+
+.progress-container {
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Apply for Certificates</h2>
+        <h3>Bonafide Certificate</h3>
+        <button class="btn btn-primary" onclick="requestProcessing('Bonafide', this)">Request Processing</button>
+        <h3>College Leaving Certificate</h3>
+        <button class="btn btn-primary" onclick="requestProcessing('College Leaving', this)">Request Processing</button>
+        <h3>Transfer Certificate</h3>
+        <button class="btn btn-primary" onclick="requestProcessing('Transfer', this)">Request Processing</button>
+      </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function requestProcessing(certificateName, button) {
+      // Create a progress bar for the requested certificate
+      createProgressBar(certificateName, button);
+    }
+
+    function createProgressBar(certificateName, button) {
+      // Create a new progress bar container div
+      var progressContainer = document.createElement("div");
+      progressContainer.className = "progress-container";
+      
+      // Create a new progress bar div
+      var progressBarDiv = document.createElement("div");
+      progressBarDiv.className = "progress";
+      var progressBarInner = document.createElement("div");
+      progressBarInner.className = "progress-bar";
+      progressBarInner.setAttribute("role", "progressbar");
+      progressBarInner.setAttribute("aria-valuenow", "25");
+      progressBarInner.setAttribute("aria-valuemin", "0");
+      progressBarInner.setAttribute("aria-valuemax", "100");
+      progressBarInner.style.width = "0%"; // Initially, set width to 0%
+      progressBarDiv.appendChild(progressBarInner);
+      progressContainer.appendChild(progressBarDiv);
+      
+      // Add progress bar to the container
+      button.parentNode.insertBefore(progressContainer, button.nextSibling);
+      
+      // Add certificate name as text just above the progress bar
+      var certificateNameText = document.createElement("p");
+      certificateNameText.textContent = certificateName + " Certificate";
+      progressContainer.insertBefore(certificateNameText, progressBarDiv);
+
+      // Simulate progress (for demonstration purposes)
+      var width = 1;
+      var interval = setInterval(function() {
+        if (width >= 100) {
+          clearInterval(interval);
+        } else {
+          width++;
+          progressBarInner.style.width = width + "%";
+        }
+      }, 50);
+    }
+  </script>
+</body>
+</html>
