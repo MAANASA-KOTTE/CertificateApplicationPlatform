@@ -2,58 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome Page</title>
+  <title>CertiPortal | Your Digital Certificate Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+    }
 
-.intro-container {
-  text-align: center;
-  margin-top: 100px;
-}
+    .navbar {
+      background-color: #0f172a;
+      padding: 20px 0;
+    }
 
-.button-container {
-  margin-top: 30px;
-}
+    .navbar-brand, .nav-link {
+      color: #ffffff !important;
+      font-size: 18px;
+    }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 10px;
-  font-size: 16px;
-}
+    .main-title {
+      font-size: 48px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
 
-.student-button {
-  background-color: #4CAF50;
-  color: white;
-}
+    .tagline {
+      font-size: 20px;
+      color: #374151;
+    }
 
-.admin-button {
-  background-color: #008CBA;
-  color: white;
-}
+    .hero {
+      padding: 60px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-.signup-button {
-  background-color: #f44336;
-  color:white;
-}
+    .hero img {
+      max-width: 400px;
+      width: 100%;
+      margin: 20px;
+    }
+
+    .btn-custom {
+      margin: 15px;
+      padding: 15px 30px;
+      font-size: 18px;
+      width: 220px;
+    }
+
+    .features {
+      background-color: #ffffff;
+      padding: 80px 15px;
+      text-align: center;
+    }
+
+    .features h2 {
+      color: #1e3a8a;
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+
+    .feature-item {
+      padding: 30px;
+      background-color: #f9fafb;
+      border-radius: 15px;
+      margin: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-item h5 {
+      font-size: 20px;
+      margin-top: 15px;
+      color: #1e40af;
+    }
+
+    .feature-item p {
+      color: #4b5563;
+    }
+
+    .feature-item i {
+      font-size: 40px;
+      color: #2563eb;
+    }
+
+    .footer-cta {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 40px 15px;
+      text-align: center;
+    }
+
+    .footer-cta h3 {
+      margin-bottom: 20px;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: #1e3a8a;
+      border: none;
+    }
+
+    .btn-white:hover {
+      background-color: #f3f4f6;
+    }
   </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="intro-container">
-    <h1>Welcome to Our Website</h1>
-    <div class="button-container">
-      <a href="login.html"><button class="student-button">Student</button></a>
-      <a href="admin_login.html"><button class="admin-button">Admin</button></a>
-      <a href="1_signup.html"><button class="signup-button">Sign Up</button></a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#">CertiPortal</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="1_signup.html">Signup</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero container">
+    <div class="col-lg-6">
+      <h1 class="main-title">CertiPortal</h1>
+      <p class="tagline">Your one-stop destination to apply, track, and download certificates securely and easily.</p>
+      <div class="d-flex justify-content-center flex-wrap">
+        <a href="login.html" class="btn btn-primary btn-custom">Student Login</a>
+        <a href="admin_login.html" class="btn btn-secondary btn-custom">Admin Login</a>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <img src="https://cdn-icons-png.flaticon.com/128/13668/13668820.png" alt="Certificate Illustration">
+    </div>
+  </section>
+
+  <!-- ABOUT / FEATURES SECTION -->
+  <section id="about" class="features">
+    <h2>About CertiPortal</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-3 feature-item">
+        <i class="fas fa-laptop-code"></i>
+        <h5>User-Friendly Interface</h5>
+        <p>Designed with simplicity, CertiPortal ensures a smooth certificate management experience.</p>
+      </div>
+      <div class="col-md-3 feature-item">
+        <i class="fas fa-bolt"></i>
+        <h5>Instant Access</h5>
+        <p>Download your approved certificates anytime, anywhere with just a few clicks.</p>
+      </div>
+      <div class="col-md-3 feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <h5>Secure & Reliable</h5>
+        <p>All your data is protected with top-level encryption for complete peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="footer-cta">
+    <h3>Ready to get started?</h3>
+    <a href="1_signup.html" class="btn btn-white btn-lg">Sign Up Now</a>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
