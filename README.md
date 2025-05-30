@@ -22,8 +22,8 @@ This is a simple and responsive admin dashboard web application to manage and re
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/CertificateApplicationPlatform.git
-cd clc-admin-portal
+git clone https://github.com/MAANASA-KOTTE/CertificateApplicationPlatform.git
+cd CertificateApplicationPlatform
 ```
 💡 Future Enhancements
 🔐 Admin authentication with login
