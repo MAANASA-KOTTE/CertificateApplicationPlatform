@@ -30,23 +30,22 @@
     }
     .status-badge {
       font-weight: 500;
-      padding: 0.4em 0.7em;
+      padding: 0.4em 0.75em;
       border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
     }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark px-3">
+<nav class="navbar navbar-expand-lg navbar-dark px-4">
   <a class="navbar-brand fw-bold" href="#"><i class="bi bi-person-lock"></i> Admin Panel</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 </nav>
 
 <div class="container mt-5">
   <div class="card table-card p-4">
-    <h3 class="mb-4 text-primary"><i class="bi bi-file-earmark-text"></i> CLC Certificate Applications</h3>
+    <h3 class="mb-4 text-primary"><i class="bi bi-file-earmark-text me-2"></i>CLC Certificate Applications</h3>
+    
     <div class="table-responsive">
       <table class="table table-hover align-middle">
         <thead class="table-primary">
@@ -60,40 +59,73 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Application 1 -->
           <tr id="application1">
             <td>John Doe</td>
             <td>Bonafide</td>
             <td>Apply for exam</td>
-            <td><a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-file-earmark-pdf"></i> View</a></td>
             <td>
-              <button class="btn btn-success btn-sm me-1" onclick="changeStatus('application1', 'Approved')"><i class="bi bi-check-circle"></i></button>
-              <button class="btn btn-danger btn-sm" onclick="changeStatus('application1', 'Rejected')"><i class="bi bi-x-circle"></i></button>
+              <a href="#" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-file-earmark-pdf"></i> View
+              </a>
             </td>
-            <td><span id="status1" class="status-badge bg-warning text-dark">Pending</span></td>
+            <td>
+              <button class="btn btn-success btn-sm me-1" onclick="changeStatus('application1', 'Approved')">
+                <i class="bi bi-check-circle"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="changeStatus('application1', 'Rejected')">
+                <i class="bi bi-x-circle"></i>
+              </button>
+            </td>
+            <td>
+              <span id="status1" class="status-badge bg-warning text-dark">Pending</span>
+            </td>
           </tr>
 
+          <!-- Application 2 -->
           <tr id="application2">
             <td>Jane Smith</td>
             <td>Transfer</td>
             <td>Personal Reasons</td>
-            <td><a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-file-earmark-pdf"></i> View</a></td>
             <td>
-              <button class="btn btn-success btn-sm me-1" onclick="changeStatus('application2', 'Approved')"><i class="bi bi-check-circle"></i></button>
-              <button class="btn btn-danger btn-sm" onclick="changeStatus('application2', 'Rejected')"><i class="bi bi-x-circle"></i></button>
+              <a href="#" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-file-earmark-pdf"></i> View
+              </a>
             </td>
-            <td><span id="status2" class="status-badge bg-warning text-dark">Pending</span></td>
+            <td>
+              <button class="btn btn-success btn-sm me-1" onclick="changeStatus('application2', 'Approved')">
+                <i class="bi bi-check-circle"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="changeStatus('application2', 'Rejected')">
+                <i class="bi bi-x-circle"></i>
+              </button>
+            </td>
+            <td>
+              <span id="status2" class="status-badge bg-warning text-dark">Pending</span>
+            </td>
           </tr>
 
+          <!-- Application 3 -->
           <tr id="application3">
             <td>Amri Paul</td>
             <td>Transfer</td>
             <td>Relocation</td>
-            <td><a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-file-earmark-pdf"></i> View</a></td>
             <td>
-              <button class="btn btn-success btn-sm me-1" onclick="changeStatus('application3', 'Approved')"><i class="bi bi-check-circle"></i></button>
-              <button class="btn btn-danger btn-sm" onclick="changeStatus('application3', 'Rejected')"><i class="bi bi-x-circle"></i></button>
+              <a href="#" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-file-earmark-pdf"></i> View
+              </a>
             </td>
-            <td><span id="status3" class="status-badge bg-warning text-dark">Pending</span></td>
+            <td>
+              <button class="btn btn-success btn-sm me-1" onclick="changeStatus('application3', 'Approved')">
+                <i class="bi bi-check-circle"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="changeStatus('application3', 'Rejected')">
+                <i class="bi bi-x-circle"></i>
+              </button>
+            </td>
+            <td>
+              <span id="status3" class="status-badge bg-warning text-dark">Pending</span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -104,7 +136,9 @@
 <!-- JavaScript for Status Update -->
 <script>
   function changeStatus(applicationId, newStatus) {
-    const statusElement = document.getElementById('status' + applicationId.replace("application", ""));
+    const appNum = applicationId.replace("application", "");
+    const statusElement = document.getElementById("status" + appNum);
+
     if (newStatus === 'Approved') {
       statusElement.innerText = 'Approved';
       statusElement.className = 'status-badge bg-success text-white';
