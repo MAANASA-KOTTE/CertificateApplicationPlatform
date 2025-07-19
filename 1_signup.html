@@ -12,63 +12,56 @@
       padding-left: .75em;
       padding-right: .75em;
     }
-    .card-registration .select-arrow {
-      top: 13px;
-    }
   </style>
 </head>
 <body>
-  <section class="h-100 bg-dark">
+  <section class="vh-100 bg-dark">
     <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col">
-          <div class="card card-registration my-4">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-lg-10">
+          <div class="card card-registration shadow-lg">
             <div class="row g-0">
               <div class="col-xl-6 d-none d-xl-block">
                 <img src="https://thumbs.dreamstime.com/b/vertical-portrait-group-students-together-happy-smiling-looking-camera-vertical-portrait-group-students-266441428.jpg"
-                     alt="Sample photo" class="img-fluid"
-                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                     alt="Student group" class="img-fluid h-100"
+                     style="object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
               </div>
               <div class="col-xl-6">
-                <div class="card-body p-md-5 text-black">
-                  <h3 class="mb-5 text-uppercase">Student Registration Form</h3>
+                <div class="card-body p-md-5">
+                  <h3 class="mb-4 text-uppercase">Student Registration Form</h3>
 
                   <form id="studentForm" action="success.html" method="get">
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <label class="form-label">Name</label>
-                          <input type="text" name="name" class="form-control form-control-lg" required />
-                        </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-control form-control-lg" required />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="roll" class="form-label">Roll Number</label>
+                        <input type="text" id="roll" name="roll" class="form-control form-control-lg" required />
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <label class="form-label">Roll Number</label>
-                          <input type="text" name="roll" class="form-control form-control-lg" required />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-                      <h6 class="mb-0 me-4">Gender:</h6>
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" required />
+
+                    <div class="mb-3">
+                      <h6 class="mb-2">Gender:</h6>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="Female" required>
                         <label class="form-check-label" for="femaleGender">Female</label>
                       </div>
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male" />
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="maleGender" value="Male">
                         <label class="form-check-label" for="maleGender">Male</label>
                       </div>
-                      <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input" type="radio" name="gender" id="otherGender" value="Other" />
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="otherGender" value="Other">
                         <label class="form-check-label" for="otherGender">Other</label>
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-md-4 mb-4">
-                        <select name="course" class="form-select" required>
+                    <div class="row mb-3">
+                      <div class="col-md-4">
+                        <label for="course" class="form-label">Course</label>
+                        <select id="course" name="course" class="form-select" required>
                           <option value="" selected disabled>--course--</option>
                           <option>CSE</option>
                           <option>IT</option>
@@ -80,8 +73,9 @@
                           <option>CHEM</option>
                         </select>
                       </div>
-                      <div class="col-md-4 mb-4">
-                        <select name="section" class="form-select" required>
+                      <div class="col-md-4">
+                        <label for="section" class="form-label">Section</label>
+                        <select id="section" name="section" class="form-select" required>
                           <option value="" selected disabled>--section--</option>
                           <option>1</option>
                           <option>2</option>
@@ -90,8 +84,9 @@
                           <option>5</option>
                         </select>
                       </div>
-                      <div class="col-md-4 mb-4">
-                        <select name="semester" class="form-select" required>
+                      <div class="col-md-4">
+                        <label for="semester" class="form-label">Semester</label>
+                        <select id="semester" name="semester" class="form-select" required>
                           <option value="" selected disabled>--semester--</option>
                           <option>1</option>
                           <option>2</option>
@@ -105,26 +100,26 @@
                       </div>
                     </div>
 
-                    <div class="form-outline mb-4">
-                      <label class="form-label">DOB</label>
-                      <input type="date" name="dob" class="form-control form-control-lg" required />
+                    <div class="mb-3">
+                      <label for="dob" class="form-label">Date of Birth</label>
+                      <input type="date" id="dob" name="dob" class="form-control form-control-lg" required />
                     </div>
-                    <div class="form-outline mb-4">
-                      <label class="form-label">Email ID</label>
-                      <input type="email" name="email" class="form-control form-control-lg" required />
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email ID</label>
+                      <input type="email" id="email" name="email" class="form-control form-control-lg" required />
                     </div>
-                    <div class="form-outline mb-4">
-                      <label class="form-label">Username</label>
-                      <input type="text" name="username" class="form-control form-control-lg" required />
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" id="username" name="username" class="form-control form-control-lg" required />
                     </div>
-                    <div class="form-outline mb-4">
-                      <label class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control form-control-lg" required />
+                    <div class="mb-4">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" id="password" name="password" class="form-control form-control-lg" required />
                     </div>
 
-                    <div class="d-flex justify-content-end pt-3">
-                      <button type="reset" class="btn btn-light btn-lg">Reset all</button>
-                      <button type="submit" class="btn btn-primary btn-lg ms-2">Submit form</button>
+                    <div class="d-flex justify-content-end">
+                      <button type="reset" class="btn btn-secondary btn-lg me-2">Reset</button>
+                      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                   </form>
 
